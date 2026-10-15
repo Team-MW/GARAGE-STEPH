@@ -178,22 +178,23 @@ function App() {
   return (
     <div className="app-layout">
       {/* Top Banner Notice */}
-      <div style={{ background: '#0a0e17', borderBottom: '1px solid rgba(255,255,255,0.06)', padding: '6px 0', fontSize: '0.82rem' }}>
-        <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '8px' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-            <span style={{ display: 'flex', alignItems: 'center', gap: '6px', color: '#94a3b8' }}>
-              <MapPin size={14} color="#0ea5e9" /> 316 Chemin de Buzet, 47200 Marmande
+      <div className="top-bar-notice">
+        <div className="container top-bar-inner">
+          <div className="top-bar-left">
+            <span className="top-bar-item">
+              <MapPin size={13} color="#0ea5e9" /> 316 Chemin de Buzet, 47200 Marmande
             </span>
-            <span style={{ display: 'flex', alignItems: 'center', gap: '6px', color: '#94a3b8' }}>
-              <Clock size={14} color="#0ea5e9" /> 8h–12h30 & 13h30–18h
+            <span className="top-bar-divider desktop-only">•</span>
+            <span className="top-bar-item desktop-only">
+              <Clock size={13} color="#0ea5e9" /> 8h–12h30 &amp; 13h30–18h
             </span>
           </div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-            <span style={{ display: 'flex', alignItems: 'center', gap: '4px', color: '#f59e0b', fontWeight: 600 }}>
-              <Star size={14} fill="#f59e0b" /> 4,7/5 (21 avis Google)
+          <div className="top-bar-right">
+            <span className="top-bar-item rating-pill">
+              <Star size={13} fill="#f59e0b" color="#f59e0b" /> 4,7/5 (21 avis Google)
             </span>
-            <span style={{ color: 'rgba(255,255,255,0.2)' }}>|</span>
-            <span style={{ color: '#cbd5e1' }}>Artisan Garagiste : <strong>Stéphane</strong></span>
+            <span className="top-bar-divider">•</span>
+            <span className="top-bar-item artisan-tag">Artisan : <strong>Stéphane</strong></span>
           </div>
         </div>
       </div>
@@ -217,21 +218,21 @@ function App() {
             <ul className="nav-links">
               <li><a href="#services" className="nav-link">Services</a></li>
               <li><a href="#stephane" className="nav-link">L'Atelier</a></li>
-              <li><a href="#horaires" className="nav-link">Horaires & Accès</a></li>
+              <li><a href="#horaires" className="nav-link">Horaires &amp; Accès</a></li>
               <li><a href="#avis" className="nav-link">Avis (4,7/5)</a></li>
-              <li><a href="#contact" className="nav-link">Devis & RDV</a></li>
+              <li><a href="#contact" className="nav-link">Devis &amp; RDV</a></li>
             </ul>
           </nav>
 
           <div className="nav-cta-wrap">
             <div className={`status-pill ${!isOpenNow ? 'closed' : ''}`}>
               <span className="status-dot"></span>
-              <span>{isOpenNow ? 'Ouvert' : 'Fermé'}</span>
+              <span className="status-text">{isOpenNow ? 'Ouvert' : 'Fermé'}</span>
             </div>
 
-            <a href="tel:0685122225" className="glow-btn-red nav-call-btn">
+            <a href="tel:0685122225" className="glow-btn-red nav-call-btn" title="Appeler Stéphane 06 85 12 22 25">
               <Phone size={16} />
-              <span>06 85 12 22 25</span>
+              <span className="nav-call-label">06 85 12 22 25</span>
             </a>
           </div>
         </div>

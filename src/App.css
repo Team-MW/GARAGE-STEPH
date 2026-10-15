@@ -139,6 +139,50 @@
   border-radius: 9999px;
   font-weight: 700;
   font-size: 0.9rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* Top Bar Notice */
+.top-bar-notice {
+  background: #080c14;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 6px 0;
+  font-size: 0.8rem;
+}
+
+.top-bar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.top-bar-left, .top-bar-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.top-bar-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #94a3b8;
+}
+
+.top-bar-divider {
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.rating-pill {
+  color: #f59e0b;
+  font-weight: 600;
+}
+
+.artisan-tag {
+  color: #cbd5e1;
 }
 
 /* Hero Section */
@@ -1425,34 +1469,213 @@
 }
 
 @media (max-width: 768px) {
+  body {
+    padding-bottom: calc(75px + env(safe-area-inset-bottom, 0px));
+  }
+
+  .top-bar-notice {
+    padding: 5px 0;
+    font-size: 0.72rem;
+  }
+
+  .top-bar-inner {
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .desktop-only {
+    display: none !important;
+  }
+
+  .navbar {
+    padding: 8px 0;
+  }
+
+  .nav-inner {
+    gap: 8px;
+  }
+
+  .logo-icon-badge {
+    width: 38px;
+    height: 38px;
+  }
+
+  .brand-main-name {
+    font-size: 1.05rem;
+    gap: 4px;
+  }
+
+  .brand-tag-47 {
+    font-size: 0.75rem;
+    padding: 1px 5px;
+  }
+
+  .brand-sub {
+    font-size: 0.62rem;
+  }
+
   .nav-links {
     display: none;
   }
-  .hero-title {
-    font-size: 2.4rem;
+
+  .nav-cta-wrap {
+    gap: 8px;
   }
+
+  .status-pill {
+    padding: 4px 8px;
+    font-size: 0.72rem;
+  }
+
+  /* On mobile: round phone button without broken stacked text */
+  .nav-call-btn {
+    width: 38px;
+    height: 38px;
+    padding: 0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .nav-call-label {
+    display: none !important;
+  }
+
+  /* Hero Section */
+  .hero-section {
+    padding: 24px 0 45px 0;
+  }
+
+  .hero-title {
+    font-size: 1.85rem;
+    line-height: 1.16;
+  }
+
+  .hero-subtitle {
+    font-size: 0.95rem;
+    line-height: 1.55;
+  }
+
+  .hero-quick-points {
+    gap: 8px;
+  }
+
+  .hero-quick-tag {
+    font-size: 0.78rem;
+    padding: 5px 10px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .btn-primary-call,
+  .btn-secondary-maps {
+    width: 100%;
+    padding: 12px 18px;
+    font-size: 0.95rem;
+  }
+
+  /* Sign card styling on mobile */
+  .hero-sign-card {
+    border-radius: 16px;
+  }
+
+  .sign-pillars-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    padding: 14px 16px;
+  }
+
+  .sign-pillar-pill {
+    padding: 8px 10px;
+    font-size: 0.75rem;
+    gap: 6px;
+  }
+
+  .sign-pillar-icon {
+    width: 22px;
+    height: 22px;
+  }
+
+  .sign-card-brand-name {
+    font-size: 1.4rem;
+  }
+
+  .sign-card-phone-btn {
+    font-size: 1rem;
+    padding: 10px 18px;
+  }
+
+  /* Services Grid */
   .services-grid {
     grid-template-columns: 1fr;
   }
-  .trust-bar-grid {
-    grid-template-columns: repeat(2, 1fr);
+
+  .section-wrapper {
+    padding: 50px 0;
   }
+
+  .section-title {
+    font-size: 1.75rem;
+  }
+
+  .section-desc {
+    font-size: 0.92rem;
+  }
+
+  .trust-bar-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
   .info-section-grid {
     grid-template-columns: 1fr;
   }
+
   .contact-section-grid {
     grid-template-columns: 1fr;
   }
+
   .reviews-grid {
     grid-template-columns: 1fr;
   }
+
+  .reviews-summary-card {
+    padding: 18px;
+  }
+
+  .reviews-big-score {
+    font-size: 2.6rem;
+  }
+
   .form-grid-2 {
     grid-template-columns: 1fr;
   }
+
+  /* Mobile floating bottom bar */
   .mobile-call-bar {
     display: block;
+    padding: 10px 14px calc(10px + env(safe-area-inset-bottom, 10px)) 14px;
+    box-shadow: 0 -8px 25px rgba(0, 0, 0, 0.65);
   }
-  body {
-    padding-bottom: 60px;
+
+  .mobile-btn-call {
+    font-size: 0.92rem;
+    padding: 12px 14px;
+  }
+
+  .mobile-btn-map {
+    font-size: 0.88rem;
+    padding: 12px 10px;
   }
 }
